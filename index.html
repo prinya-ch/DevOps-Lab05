@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101923">
+    <title>เกมต่อภาพ Jigsaw</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="game-header">
+        <div>
+          <p class="eyebrow">JIGSAW PUZZLE</p>
+          <h1>ต่อภาพให้ครบทั้งคัน</h1>
+          <p class="subtitle">ลากชิ้นส่วนไปวางให้ตรงตำแหน่งบนกระดาน</p>
+        </div>
+        <div class="game-controls">
+          <p class="progress" id="progress" aria-live="polite">กำลังเตรียมภาพ...</p>
+          <div class="buttons">
+            <button class="button button-secondary" id="preview-button" type="button" disabled>
+              ดูภาพตัวอย่าง
+            </button>
+            <button class="button button-secondary" id="music-button" type="button" aria-pressed="false">
+              เปิดเพลงพื้นหลัง
+            </button>
+            <button class="button button-primary" id="restart-button" type="button" disabled>
+              เริ่มใหม่
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <audio id="background-music" src="themesong.mp3" preload="auto" autoplay loop></audio>
+
+      <section class="play-area" aria-label="พื้นที่เล่นเกม">
+        <div class="board-wrap">
+          <div class="board" id="board" role="group" aria-label="กระดานต่อภาพ">
+            <img class="board-guide" id="board-guide" src="car.jpg" alt="" draggable="false">
+          </div>
+          <p class="board-caption">กระดานเกม · 20 ชิ้น</p>
+        </div>
+
+        <section class="piece-area" aria-labelledby="piece-heading">
+          <div class="piece-heading">
+            <h2 id="piece-heading">ชิ้นส่วน</h2>
+            <p>เลือกชิ้นส่วนแล้วลากไปวางบนกระดาน</p>
+          </div>
+          <div class="piece-tray" id="piece-tray" aria-label="ถาดชิ้นส่วน"></div>
+        </section>
+      </section>
+
+      <p class="game-message" id="game-message" role="status" aria-live="polite"></p>
+    </main>
+  </body>
+</html>
